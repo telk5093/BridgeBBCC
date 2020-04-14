@@ -1,0 +1,232 @@
+﻿@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+html { overflow: hidden; }
+body {
+	position: absolute;
+	margin: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+/* 최대(기본) 크기는 112px */
+img.twitch_emote { max-height: 50px; }
+img.dccon { max-height: 100px; }
+
+
+/* 구독자 및 후원 메세지 설정 */
+/*
+	구독 메세지
+	<div class="chat_msg_box">
+		<div class="chat_cheer_box">(configData.cheersMsg)</div>
+		우리 스트리머 사랑해!!
+		<div calss="chat_cheer_text">
+			<img class="cheer_icon" src="./images/cheer/cheer100.gif>
+			100
+		</div>
+		사실 테스트하려고 후원하는거지만.
+	</div>
+
+	후원 메세지
+	<div class="chat_msg_box">
+		<div class="chat_subscribe_box">(configData.subMonthsMsg)</div>
+		구독인 줄 알았지만 테스트였습니다 Kappa Kappa
+	</div>
+*/
+@keyframes blink {
+	50% {
+		color: #0096ff;
+		font-weight: bold;
+		text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	}
+}
+.chat_subscribe_box,
+.chat_cheer_box	{
+	padding: 3px 0;
+	text-align: center;
+	animation-name: blink;
+	animation-duration: 1s;
+	animation-timing-function: steps(1, start);
+	animation-iteration-count: infinite;
+}
+/* 후원 금액 */
+.chat_cheer_text {
+	display: inline-block;
+	color: #0096ff;
+	font-weight: bold;
+}
+/* 후원 아이콘 */
+.chat_cheer_text img.cheer_icon {
+	max-height: 1em;
+	vertical-align: middle;
+}
+
+/* 배경 설정. 전체적인 배경이 필요할 때 이용 */
+/*
+	<div id="background"></div>
+	<div id="chat_wrapper">
+	...
+*/
+#background {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+/* 폰트 설정 */
+html {
+	font-family: NanumGothic, dotum, serif;
+	font-size: 16px;
+	color: #000000;
+}
+del {
+	color: #cccccc;
+}
+.chat_outer_box {
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	margin-top: 8px;
+	padding: 4px;
+	line-height: 1;
+}
+.chat_upper_box {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	vertical-align: middle;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAoCAYAAABOzvzpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ0QzcxNzkxQTIyRDExRTg4MTE4OEI0QzI1MTI3QTNBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ0QzcxNzkyQTIyRDExRTg4MTE4OEI0QzI1MTI3QTNBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDRDNzE3OEZBMjJEMTFFODgxMTg4QjRDMjUxMjdBM0EiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDRDNzE3OTBBMjJEMTFFODgxMTg4QjRDMjUxMjdBM0EiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz46k6fcAAACM0lEQVR42uxZTS8DURSdac20MzRoJS39IIpESCysLey7smJpa2MhEX9BsLBh6Udgbc2KsCEiQlVbdCod05oxre2cu3jSICRz7+68mXnv9aTn3Hvfk9cO51qSJ1zX9UKpVjMlUWhaGHC1+go4EukCHI1GATcaDcCmieu5bhNwIBAQfm8YVcDpdBJwKBTC+SSfBxPgdwI6SqUyDPT0dANOJOKAi8WSJPIMqvl8vtDWhup11HRnpw5Y13Xh+qnUAOD3dxtwq9XifwATwAR4PCAcxjxu2w7g+/v8t/Ls2NiI1E6doSgK4GAwCJh61nfrDJYAE+B3D1CUjl/Ns1Tj/63OYAkwAX73AJr3bfv1R/t96ik0D/91ncESYAL87gGqqgg1Qz1gcDAjzNuVSkW4YKFQFNYVtP83zTdhnUE9hu6f/j7qeSwBJoDPA8Jt9QJU8zRo/07rBqr5r/r3ZhPvBRznQ6h5x0GNl8tPwrqCJcAE+N0DZFmGAcuyUDMR7NcjOrlbI3d1F5vnB6Dxpf4czl8nGr4DPJ2dRA/SYtj/m2VSdxjCOkJVVeIpfC/ABDABXg+Ih3ph4GT9CjQ8tTUOGj6+PBX21zRonVHZeYT5M6ujMP+LW8M6IYDnDdlYGs8TNq5hPmvBymEvo+F5wy6uzxJgAnwe8vzMxL53oG9qFl54PjsSTpBcGQbNPWzdHLSzAW2xF76v7xnwfXw5A89L23fwfCiBHnZbNITr0fdZAkyAz+NTgAEAs0bwHsC1WWwAAAAASUVORK5CYII=);
+	background-repeat-y: no-repeat;
+}
+.chat_nickname_box,
+.chat_badge_box {
+	display: inline-block;
+}
+.chat_badge_box {
+	float: right;
+}
+.chat_outer_box .chat_msg_box,
+.chat_lower_box	{
+	clear: right;
+}
+.chat_lower_box {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA8CAYAAADWibxkAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhCOTlCQTVFQTIyQzExRThBNjlBOTk4NENBOTJCRjVFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhCOTlCQTVGQTIyQzExRThBNjlBOTk4NENBOTJCRjVFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEI5OUJBNUNBMjJDMTFFOEE2OUE5OTg0Q0E5MkJGNUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEI5OUJBNURBMjJDMTFFOEE2OUE5OTg0Q0E5MkJGNUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7XFCAuAAACBklEQVR42uybMUsDQRCFNxI7MZwIahEMprKKiKWCdoK1fX6GP8f/IAE7BcFKJKmsLihBEiEoVtoItjcvsI9hT5t90w23d3s87pudmd1rXJwfXoWKtTeKqhsmbx/Bc/15Zv3OZhFSnn83Ghv/qLfjmp+NXwqZmwTIXYAmYw4ZZsyieZl/CtvAcKiVeRwvBCRA7jEAmV/vnVhmRjcuxpkhg2jzmX2fCcQglmewGIZ+s25F8QW9AgkBCfDPMWBx3Rwafxeud7fWjH95/eBah5FBNLyfxagA78vux/mFgATIPQawXBmXsXL67mKardssL1gYD3nJCqlV8P7jva6+AAkgASoxAJm4HZZRptBa+2d2/OPAxSAazu8dz/oPGMOEgATIPQYgQ2iMwfL13virhEHGLOYFyCwzb89SCEiA3GNAO5FZL3Ms98d6njHOTP0AISABfP0AtlfoZY7V96mMp9YKQkAC5B4D2IC663nM7TFm9E8Pos/HfQhWK7B+hRCQAKoFCtc6zJhjPUacD/f6yumLKyaxc4SfwLzOCAkBCWCsgWeFvefuWP2P5wlYD7JuY3mLEJAAqgWCi3m08fzb+Ms/X9Hx3v8NsDbAWoDVKixvEQISQLVAGpO4rrO+P3se6y+wGMVqD30BEkACxPMANGQU11XGGPbkOlCf//X+v/4ZEgISIGq/AgwAHgcjMcT4RNcAAAAASUVORK5CYII=);
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+.chat_msg_box {
+	border-radius: 0 0 10px 10px;
+	white-space: pre-line;
+	word-break: break-word;
+	max-height: 260px;
+	padding: 10px;
+	font-size: 16px;
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	color: #fff;
+}
+.chat_msg_box.image_only {
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+
+
+
+/* 클립이 포함된 채팅 메세지에 대한 설정 */
+/* 크롬 등 보안설정된 브라우저에선 디버그가 불가능하므로 유의 */
+/*
+	<div class="chat_outer_box clip_included">
+		<div class="chat_inner_box">
+			...
+		</div>
+		<div class="chat_msg_box">
+			<div class="chat_clip_box">
+				<img src="https://clips-media-assets.twitch.tv/*-preview.jpg">
+				<div class="chat_clip_title">이걸 스트리머가 또</div>
+				<div class="chat_clip_by">Clipped by 맛물</div>
+			</div>
+			...
+	클립 로드에 실패했을 경우
+			<div class="chat_clip_box text_only invalid text_only">
+				Invalid Clip
+			</div>
+			...
+	클립 미리보기를 미표시설정했을 경우(configData.loadClipPreview == false)
+			<div class="chat_clip_box text_only">
+				(configData.clipReplaceMsg)
+			</div>
+			...
+	0.3.0 버전과 그 이후
+	<div class="chat_outer_box clip_included">
+		<div class="chat_upper_box">
+			...
+		</div>
+		<div class="chat_lower_box">
+			<div class="chat_clip_box">
+				<img src...>
+				<div class="chat_clip_title">...</div>
+				<div class="chat_clip_by">...</div>
+			</div>
+			<div class="chat_msg_box">
+			</div>
+			...
+*/
+.clip_included .chat_msg_box /* SOON DEPRECATED */
+{
+	/* 클립과 일반 텍스트를 같이 보냈을 경우를 위해 높이를 높여준다 */
+	max-height: 160px;
+}
+
+.chat_clip_box {
+	/* .chat_clip_by의 absolute position을 위해 설정 */
+	position: relative;
+	padding: 10px 0 0 0;
+}
+
+.chat_clip_box img {
+	/* 사실상 이 속성으로 .chat_clip_box의 높이를 조절 */
+	height: 56px;
+	/* .chat_clip_box의 나머지 DOM을 오른쪽에 배치시키기 위해 float을 이용 */
+	float: left;
+	margin-left: 10px;
+}
+.chat_clip_title {
+	/* 가로세로로 모두 가운데정렬하기 위해 사용. .chat_clip_box img의 높이와 맞춰준다 */
+	line-height: 56px;
+	text-align: center;
+
+	/* 제목이 길 경우를 대비 */
+	white-space: pre;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	color: #fff;
+}
+
+.chat_clip_by {
+	/* .chat_clip_box의 우하단에 배치 */
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	/* config client로 조절하지 않는 글꼴크기이므로 .chat_msg_box에서 상속받아 조절 */
+	font-size: 0.7em;
+
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	color: #fff;
+}
+
+.chat_clip_box.text_only {
+	text-align: center;
+}
+.chat_clip_box.text_only img {
+	height: auto !important;
+	float: none !important;
+}
