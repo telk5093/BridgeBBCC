@@ -1,11 +1,7 @@
-﻿/*
-@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-*/
-@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+﻿@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(./common.css);
 
 html { overflow: hidden; }
 body {
@@ -15,11 +11,6 @@ body {
 	left: 0;
 	bottom: 0;
 }
-
-/* 최대(기본) 크기는 112px */
-img.twitch_emote { max-height: 50px; }
-img.dccon { max-height: 100px; }
-
 
 /* 구독자 및 후원 메세지 설정 */
 /*

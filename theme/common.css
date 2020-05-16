@@ -1,0 +1,13 @@
+
+img.twitch_emote { max-height: 50px; }
+.dccon {
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+	background-repeat: no-repeat;
+	background-size: 100px, 100px;
+}
+.dccon img {
+	max-height: 100px;
+}
+.chat_nickname_box { min-width: 150px; }

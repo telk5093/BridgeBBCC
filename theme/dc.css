@@ -4,6 +4,7 @@
  licensed under MIT license
  based on 'default -> xcom -> mario' theme
 */
+@import url(./common.css);
 
 :root {
   --gall-name: '트위치';
