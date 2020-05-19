@@ -1,52 +1,58 @@
 /* 기본 설정 */
 configDefault = {
-	numChatMax        : 20,               // html에 한꺼번에 표시될 수 있는 메세지의 최대 갯수
-	personalColor     : false,            /* 이름 색깔을 트위치 이름색과 일치시킬지
-											 theme에서 제한 가능                        */
-	badgeVisible      : false,            /* 구독, 비트 등 뱃지를 표시할지
-											 theme에서 제한 가능                        */
-	badgeChannelId    : 0,                // 구독 뱃지를 불러올 채널ID
-	themeURI          : "",               /* 불러올 테마 Uri.
-											 로컬 테마를 이용할 경우 공백으로 둔다.     */
-	theme             : "default",        // 사용할 테마. theme\테마\*의 파일을 사용
-	themeName         : "",               /* 테마의 이름
-											 theme로부터 import                         */
-	msgExistDuration  : 0,                // 메세지가 애니메이션을 빼면 얼마나 오래 표시될 지
-	msgAniDuration    : 0,                /* 메세지 표시 애니메이션의 소요시간
-											 theme로부터 import                         */
-	debugLevel        : 2,                // 0:미표시, 1:console.log, 2:addChatMessage
-	useDisplayName    : true,             // 한글 닉네임으로 이름을 표시할지
-	loadCheerImgs     : true,             // 비트 후원채팅을 이미지로 표시할지
-	loadTwitchCons    : true,             // 트위치 이모티콘과 구독콘을 불러올지
-	loadDcCons        : true,             // 디씨콘을 불러올지
-	dcConsURI         : "",               /* 불러올 디씨콘 Uri.
-											 로컬 디씨콘을 이용할 경우 공백으로 둔다.   */
-	subMonthsMsg      : "☆ {!0:{months} 개월 }구독{0: 시작}! ☆",
-										  // 구독 메세지를 받았을 때 추가로 출력할 텍스트
-	cheersMsg         : "☆ {!0:{bits} 비트 }후원 ! ☆",
-										  // 비트 후원을 받았을 때 추가로 출력할 텍스트
-	clipReplaceMsg    : "[클립]",         // 클립 링크의 대체 텍스트
-	webSocket         : "wss://irc-ws.chat.twitch.tv:443",
-										  /* 접속할 웹소켓
-											 const value                                */
-	nick              : "justinfan00000", // 트위치 IRC에서 이용할 gust nickname
-	pass              : "foobar",         // 트위치 IRC에서 이용할 guest password
-	channel           : "#mr_watert",     /* 접속할 채널
-											 "#id1,#id2,.."으로 여러 채널에 접속 가능   */
-	retryInterval     : 3,                // 접속에 끊겼을 때 재접속 시도 간격(초)
-	allMessageHandle  : false,            /* IRC로부터 받은 처리되지 않은 메세지를 html에 표시
-											 "처리되지 않은 메세지를 수신했습니다"      */
-	muteUser          : ["Nightbot"],     /* html에 표시하지 않을 유저 nickname
-											 display-name과 트위치 id를 모두 사용 가능  */
-	deleteBanMsg      : true,             // ban된 유저의 메세지를 지우기
-	commands          : [
-	  {exe:"clear", msg:"!!clear"},
-	  {exe:"theme", msg:"!!theme"},
-	  {exe:"load", msg:"!!load"}
-	],                                    // 활성화시킬 명령어
-	replaceMsgs       : []                // 봇 메세지 등을 대체
-  };
-  
+  numChatMax        : 20,               // html에 한꺼번에 표시될 수 있는 메세지의 최대 갯수
+  personalColor     : false,            /* 이름 색깔을 트위치 이름색과 일치시킬지
+                                           theme에서 제한 가능                        */
+  badgeVisible      : false,            /* 구독, 비트 등 뱃지를 표시할지
+                                           theme에서 제한 가능                        */
+  badgeChannelId    : 0,                // 구독 뱃지를 불러올 채널ID
+  themeURI          : "",               /* 불러올 테마 Uri.
+                                           로컬 테마를 이용할 경우 공백으로 둔다.     */
+  theme             : "default",        // 사용할 테마. theme\테마\*의 파일을 사용
+  themeName         : "",               /* 테마의 이름
+                                           theme로부터 import                         */
+  msgExistDuration  : 0,                // 메세지가 애니메이션을 빼면 얼마나 오래 표시될 지
+  msgAniDuration    : 0,                /* 메세지 표시 애니메이션의 소요시간
+                                           theme로부터 import                         */
+  debugLevel        : 2,                // 0:미표시, 1:console.log, 2:addChatMessage
+  useDisplayName    : true,             // 한글 닉네임으로 이름을 표시할지
+  loadCheerImgs     : true,             // 비트 후원채팅을 이미지로 표시할지
+  loadTwitchCons    : true,             // 트위치 이모티콘과 구독콘을 불러올지
+  loadDcCons        : true,             // 디씨콘을 불러올지
+  dcConsURI         : "",               /* 불러올 디씨콘 Uri.
+                                           로컬 디씨콘을 이용할 경우 공백으로 둔다.   */
+  subMonthsMsg      : "☆ {!0:{months} 개월 }구독{0: 시작}! ☆",
+                                        // 구독 메세지를 받았을 때 추가로 출력할 텍스트
+  cheersMsg         : "☆ {!0:{bits} 비트 }후원 ! ☆",
+                                        // 비트 후원을 받았을 때 추가로 출력할 텍스트
+  clipReplaceMsg    : "[클립]",         // 클립 링크의 대체 텍스트
+  linkReplaceMsg    : "[링크]",         // (일반) 링크의 대체 텍스트
+  webSocket         : "wss://irc-ws.chat.twitch.tv:443",
+                                        /* 접속할 웹소켓
+                                           const value                                */
+  nick              : "justinfan00000", // 트위치 IRC에서 이용할 gust nickname
+  pass              : "foobar",         // 트위치 IRC에서 이용할 guest password
+  channel           : "#mr_watert",     /* 접속할 채널
+                                           "#id1,#id2,.."으로 여러 채널에 접속 가능   */
+  retryInterval     : 3,                // 접속에 끊겼을 때 재접속 시도 간격(초)
+  allMessageHandle  : false,            /* IRC로부터 받은 처리되지 않은 메세지를 html에 표시
+                                           "처리되지 않은 메세지를 수신했습니다"      */
+  muteUser          : ["Nightbot"],     /* html에 표시하지 않을 유저 nickname
+                                           display-name과 트위치 id를 모두 사용 가능  */
+  deleteBanMsg      : true,             // ban된 유저의 메세지를 지우기
+  commands          : [
+    {exe:"clear", msg:"!!clear"},
+    {exe:"theme", msg:"!!theme"},
+    {exe:"load", msg:"!!load"},
+    {exe:"scale", msg:"!!scale"}
+  ],                                    // 활성화시킬 명령어
+  replaceMsgs       : []                /* 봇 메세지 등을 대체
+                                           {
+                                             orig: 원문(문자열 또는 정규표현식),
+                                             to: 대체할 문자열("{no_display}"로 미표시)
+                                            }                                         */
+};
+
 
 
 /* 메세지 출력 함수 정의 */
@@ -63,121 +69,181 @@ var replaceMsgFormat = function(message, amount) {
 	}
 	return retMessage;
 }
+var getRemoveTimeout = function(box) {
+  return function() {
+    if ((box||{}).parentElement != null) {
+      box.remove();
+      --numChat;
+    }
+  };
+}
+var timeToMs = function(time) {
+  var num = time.split(/[a-z]/i)[0];
+  try { num = Number(num); }
+  catch(e) { return 0; }
+
+  var isMs = /ms/.test(time);
+  return num * (isMs? 1: 1000);
+}
+var applyMessageRemove = function(box) {
+  // 기존 타이머를 정리
+  if (box.timeout) { clearTimeout(box.timeout); }
+  if (!box.nodeType) { return; }
+
+  // CSS 애니메이션 적용
+  if (configData.msgAniDuration) {
+    var computedStyle = getComputedStyle(box);
+    var origName = computedStyle.animationName;
+    var origDuration = computedStyle.animationDuration;
+    var origAnimation = computedStyle.animation;
+    var origDirection = computedStyle.animationDirection;
+
+    box.classList.add("remove");
+    var newName = computedStyle.animationName;
+    var newDuration = computedStyle.animationDuration;
+
+    var condOrig = (origName != "none");
+    var condNew = (newName != "none");
+    var condSame = (origName == newName);
+
+    if (!condNew && !condOrig) {
+    // 애니메이션이 하나도 없을 경우 그냥 삭제
+      (getRemoveTimeout(box))();
+      return;
+    }
+
+    if (condOrig && (condNew == condSame)) {
+    // 메세지 삭제 애니메이션만 없을 경우 생성 애니메이션을 반전
+      box.style.animation = origAnimation;
+      box.style.animationDirection = {
+        "normal": "reverse", "alternate": "alternate-reverse",
+        "reverse": "normal", "alternate-reverse": "alternate"
+      }[origDirection] || "reverse";
+    }
+
+    if (configData.msgAniDuration > 0) {
+    // 애니메이션 시간을 적용
+      newDuration = configData.msgAniDuration + "s";
+      box.style.animationDuration = newDuration;
+    }
+
+
+    box.timeout = setTimeout(
+      getRemoveTimeout(box),
+      timeToMs(newDuration) || timeToMs(origDuration)
+    );
+  } else {
+  // 메세지 삭제 애니메이션 무시
+    (getRemoveTimeout(box))();
+    return;
+  }
+}
 addChatMessage = function(nick, message, data) {
 
-	// DOM Element 생성
-	var chatNicknameBox = document.createElement("div");
-	chatNicknameBox.classList.add("chat_nickname_box");
-	var chatBadgeBox = document.createElement("div");
-	chatBadgeBox.classList.add("chat_badge_box");
-	var chatUpperBox = document.createElement("div");
-	chatUpperBox.classList.add("chat_upper_box");
-	var chatMessageBox = document.createElement("div");
-	chatMessageBox.classList.add("chat_msg_box");
-	var chatLowerBox = document.createElement("div");
-	chatLowerBox.classList.add("chat_lower_box");
-	var chatOuterBox = document.createElement("div");
-	chatOuterBox.classList.add("chat_outer_box");
-	if (data.nick) { chatOuterBox.classList.add("user_"+data.nick); }
+  // DOM Element 생성
+  var chatNicknameBox = document.createElement("div");
+  chatNicknameBox.classList.add("chat_nickname_box");
+  var chatBadgeBox = document.createElement("div");
+  chatBadgeBox.classList.add("chat_badge_box");
+  var chatUpperBox = document.createElement("div");
+  chatUpperBox.classList.add("chat_upper_box");
+  var chatMessageBox = document.createElement("div");
+  chatMessageBox.classList.add("chat_msg_box");
+  var chatLowerBox = document.createElement("div");
+  chatLowerBox.classList.add("chat_lower_box");
+  var chatOuterBox = document.createElement("div");
+  chatOuterBox.classList.add("chat_outer_box");
+  if (data.nick) { chatOuterBox.classList.add("user_"+data.nick); }
 
 
-	// Element에 내용 추가
-	chatNicknameBox.innerHTML = nick;
-	message = message.replace(/\\\"/g, '"').replace(/\\\\/g, "\\");
-	if ((data.escape == undefined) || (data.escape == true)) {
-		message = message.replace(/</g,"&lt;").replace(/>/g,"&gt;");
-	}
-	if (typeof applyMessage != "undefined") {
-		chatMessageBox.innerHTML = applyMessage(message, data);
-		if (data.noDisplay) { return null; }
-	}
-	else { chatMessageBox.innerHTML = message; }
+  // Element에 내용 추가
+  chatNicknameBox.innerHTML = nick;
+  message = message.replace(/\\\"/g, '"').replace(/\\\\/g, "\\");
+  if (typeof applyMessage != "undefined") {
+    chatMessageBox.innerHTML = applyMessage(message, data);
+    if (data.noDisplay) { return null; }
+  }
+  else { chatMessageBox.innerHTML = message; }
 
-	if (data) {
-		if (data.color && configData.personalColor) {
-			chatNicknameBox.style.color = data.color;
-		}
+  if (data) {
+    if (data.color && configData.personalColor) {
+      chatNicknameBox.style.color = data.color;
+    }
 
-		if (data.badges && configData.badgeVisible) {
-			// 뱃지 채워넣고
-			  data.badges.toString().split(",").forEach( function(badge) {
-				var badgeName = badge.split("/")[0];
-				var badgeTier = badge.split("/")[1];
-		
-				var targets = Object.keys(badgeList||{})
-				  .filter( function(name) { return (name.indexOf(badgeName + "/") == 0); } )
-				  .filter( function(name) { return Number(name.split("/")[1]) <= badgeTier; } )
-				  .sort( function(right, left) {
-					return Number(left.split("/")[1]) - Number(right.split("/")[1]);
-				  } );
-		
-				  if (targets.length > 0) {
-					var chatBadge = document.createElement("img");
-					chatBadge.src = badgeList[targets[0]];
-					chatBadgeBox.appendChild(chatBadge);
-				  }
-			} );
-		}
-		if (chatBadgeBox.children.length == 0) { chatBadgeBox.classList.add("empty"); }
+    if (data.badges && configData.badgeVisible) {
+    // 뱃지 채워넣고
+      data.badges.toString().split(",").forEach( function(badge) {
+        var badgeName = badge.split("/")[0];
+        var badgeTier = badge.split("/")[1];
 
-		if (data.clip) {
-			// 클립 추가하고
-			chatLowerBox.innerHTML = data.clip + chatLowerBox.innerHTML;
-		}
-		if (data.subMonths != undefined) {
-			// 후원메세지 그 위에 추가하고
-			chatLowerBox.innerHTML =
-				'<div class="chat_subscribe_box">' +
-				replaceMsgFormat(configData.subMonthsMsg, data.subMonths) +
-				"</div>" + chatLowerBox.innerHTML;
-		}
-		if (data.cheers != undefined) {
-			// 비트 메세지도 그 위에 추가하고
-			chatLowerBox.innerHTML =
-				'<div class="chat_cheer_box">' +
-				replaceMsgFormat(configData.cheersMsg, data.cheers) +
-				"</div>" + chatLowerBox.innerHTML;
-		}
-	}
-	if ( chatMessageBox.innerHTML.replace(/(<[^>]*>)|\s/g,"").length == 0) {
-		chatMessageBox.classList.add("image_only");
-	}
+        var targets = Object.keys(badgeList||{})
+          .filter( function(name) { return (name.indexOf(badgeName + "/") == 0); } )
+          .filter( function(name) { return Number(name.split("/")[1]) <= badgeTier; } )
+          .sort( function(right, left) {
+            return Number(left.split("/")[1]) - Number(right.split("/")[1]);
+          } );
+
+        if (targets.length > 0) {
+          var chatBadge = document.createElement("img");
+          chatBadge.src = badgeList[targets[0]];
+          chatBadgeBox.appendChild(chatBadge);
+        }
+      } );
+    }
+    if (chatBadgeBox.children.length == 0) { chatBadgeBox.classList.add("empty"); }
+
+    if (data.clip) {
+    // 클립 추가하고
+      chatLowerBox.innerHTML = data.clip + chatLowerBox.innerHTML;
+    }
+    if (data.subMonths != undefined) {
+    // 후원메세지 그 위에 추가하고
+      chatLowerBox.innerHTML =
+        '<div class="chat_subscribe_box">' +
+        replaceMsgFormat(configData.subMonthsMsg, data.subMonths) +
+        "</div>" + chatLowerBox.innerHTML;
+    }
+    if (data.cheers != undefined) {
+    // 비트 메세지도 그 위에 추가하고
+      chatLowerBox.innerHTML =
+        '<div class="chat_cheer_box">' +
+        replaceMsgFormat(configData.cheersMsg, data.cheers) +
+        "</div>" + chatLowerBox.innerHTML;
+    }
+  }
+  if ( chatMessageBox.innerHTML.replace(/(<[^>]*>)|\s/g,"").length == 0) {
+    chatMessageBox.classList.add("image_only");
+  }
 
 
-	// 페이지에 Element 연결
-	chatUpperBox.appendChild(chatNicknameBox);
-	chatUpperBox.appendChild(chatBadgeBox);
-	chatOuterBox.appendChild(chatUpperBox);
-	chatOuterBox.upper = chatUpperBox;
-	chatOuterBox.appendChild(chatLowerBox);
-	chatOuterBox.lower = chatLowerBox;
-	chatLowerBox.appendChild(chatMessageBox);
-	chatLowerBox.msg = chatMessageBox;
-	document.getElementById("chat_wrapper").appendChild(chatOuterBox);
+  // 페이지에 Element 연결
+  chatUpperBox.appendChild(chatNicknameBox);
+  chatUpperBox.appendChild(chatBadgeBox);
+  chatOuterBox.appendChild(chatUpperBox);
+  chatOuterBox.upper = chatUpperBox;
+  chatOuterBox.appendChild(chatLowerBox);
+  chatOuterBox.lower = chatLowerBox;
+  chatLowerBox.appendChild(chatMessageBox);
+  chatLowerBox.msg = chatMessageBox;
+  document.getElementById("chat_wrapper").appendChild(chatOuterBox);
 
 
-	// 메세지 타임아웃 설정
-	var fadeoutTime = 0;
-	if (configData.msgExistDuration) { fadeoutTime += configData.msgExistDuration * 1000; }
-	if (configData.msgAniDuration) { fadeoutTime += configData.msgAniDuration * 1000; }
+  // 메세지 타임아웃 설정
+  if (configData.msgExistDuration > 0) {
+    setTimeout(
+      function() { applyMessageRemove(chatOuterBox); },
+      configData.msgExistDuration*1000
+    );
+  }
 
-	if (fadeoutTime != 0) {
-		setTimeout( function() {
-			if (chatOuterBox.parentElement != null) {
-				chatOuterBox.remove();
-				--numChat;
-			}
-		}, fadeoutTime );
-	}
+  // 넘치는 메세지를 삭제
+  if((++numChat > configData.numChatMax)) {
+    var first = document.getElementsByClassName("chat_outer_box")[0];
+    document.getElementById("chat_wrapper").removeChild(first);
+    --numChat;
+  }
 
-	// 넘치는 메세지를 삭제
-	if((++numChat > configData.numChatMax)) {
-		var first = document.getElementsByClassName("chat_outer_box")[0];
-		document.getElementById("chat_wrapper").removeChild(first);
-		--numChat;
-	}
-
-	return chatOuterBox;
+  return chatOuterBox;
 }
 
 var concatChatMessage = function(nick, message, data) {
@@ -239,7 +305,16 @@ if (window.location.href.indexOf("?") != -1) {
       var key = value.shift();
       value = value[0];
 
-      if ((value!=undefined) && configDefault.hasOwnProperty(key)) {
+      if (value == undefined) {
+        return;
+      }
+
+      if (key == "scale" && !isNaN(value)) {
+        window.localStorage.setItem("scale", value);
+        return;
+      }
+
+      if (configDefault.hasOwnProperty(key)) {
         switch (key) {
           case "channel":
             configData.channel = value.split(",").map( function(channel) {
@@ -284,6 +359,23 @@ if (window.location.href.indexOf("?") != -1) {
   }
 }
 
+
+
+/* 배율 설정 적용 */
+var setScale = function() {
+  var scale = window.localStorage.getItem("scale");
+  if (!scale) { return; }
+
+  with (document.body.style) {
+    width = (10000 / scale) + "%";
+    transformOrigin = "left bottom";
+    transform = "scale(" + scale/100 + ")";
+  }
+}
+setScale();
+
+
+
 /* 설정 파일 확인 및 디버그 내용 출력 함수 정의 */
 var completeCount = 0;
 var checkComplete = function() {
@@ -319,36 +411,45 @@ var checkComplete = function() {
 if (typeof configData == "undefined") { configData = {}; }
 debugLog = function(dat) {};
 {
-	var configLoadMessage = "";
-	var configDataLength = Object.keys(configData).length;
+  var configLoadMessage = "";
+  var configDataLength = Object.keys(configData).length;
 
-	if (configDataLength == 0) {
-	  configLoadMessage = "설정 파일(lib/config.js)을 로드하는 데 문제가 생겨 기본 설정을 사용합니다. ";
-	  Object.assign(configData, configDefault);
-	}
-	else if (configDataLength < Object.keys(configDefault).length) {
-	  configLoadMessage = "일부 설정값을 찾을 수 없어 기본값을 사용합니다. ";
-	  configData = Object.assign(JSON.parse(JSON.stringify(configDefault)), configData);
-	}
+  if (configDataLength == 0) {
+    configLoadMessage = "설정 파일(lib/config.js)을 로드하는 데 문제가 생겨 기본 설정을 사용합니다.<br />";
+    Object.assign(configData, configDefault);
+  }
+  else {
+    var unloadedConfigs = Object.keys(configDefault).reduce( function(acc, cur) {
+      if (configData[cur] === undefined) {
+        configData[cur] = JSON.parse(JSON.stringify(configDefault[cur]));
+        return (++acc);
+      }
+      return acc;
+    }, 0 );
 
-	if (configData.debugLevel != 0) {
-		if (configData.debugLevel == 1) { debugLog = function(dat) { console.log(dat); }; }
-		else {
-			debugLog = function(dat, unConcat) {
-				if (unConcat) {
-					addChatMessage("DEBUG", dat,
-						{ badges:["moderator/1"], color:"red", escape:false });
-				}
-				else {
-					concatChatMessage("DEBUG", dat,
-						{ badges:["moderator/1"], color:"red", escape:false });
-				}
-			};
-		}
-	}
+    if (unloadedConfigs > 0) {
+      configLoadMessage = "일부 설정값을 찾을 수 없어 기본값을 사용합니다.<br />";
+    }
+  }
 
-	debugLog(configLoadMessage + "설정을 불러왔습니다.");
-	checkComplete();
+  if (configData.debugLevel != 0) {
+    if (configData.debugLevel == 1) { debugLog = function(dat) { console.log(dat); }; }
+    else {
+      debugLog = function(dat, unConcat) {
+        if (unConcat) {
+          addChatMessage("DEBUG", dat,
+            { badges:["moderator/1"], color:"red", escape:false });
+        }
+        else {
+          concatChatMessage("DEBUG", dat,
+            { badges:["moderator/1"], color:"red", escape:false });
+        }
+      };
+    }
+  }
+
+  debugLog(configLoadMessage + "설정을 불러왔습니다.");
+  checkComplete();
 }
 
 
@@ -633,34 +734,47 @@ else {
 
 /* 명령어 정의 */
 var commandExecute = function(exe, arg) {
-	switch (exe) {
-	case "clear" :
-		manageMessage("@ : CLEARCHAT #\n");
-		return true;
+  switch (exe) {
+  case "clear" :
+    manageMessage("@ : CLEARCHAT #\n");
+    return true;
 
-	case "theme" :
-		arg = arg.match(/[a-zA-Z0-9_-]+/)[0];
-		if (arg != null) {
-			configData.theme = arg.toLowerCase();
-			loadCss();
-			return true;
-		}
-		else {
-			debugLog("잘못된 테마가 입력되었습니다.");
-			return false;
-		}
+  case "theme" :
+    arg = arg.match(/[a-zA-Z0-9_-]+/)[0];
+    if (arg != null) {
+      configData.theme = arg.toLowerCase();
+      loadCss();
+      return true;
+    }
+    else {
+      debugLog("잘못된 테마가 입력되었습니다.");
+      return false;
+    }
 
-	case "load" :
-		console.log(arg);
-		if (arg == "" || arg == "디씨콘" || arg == "디시콘" || arg == "dccon") {
-		loadDcCon();
-		return true;
-		}
+  case "load" :
+    if (arg == "" || arg == "디씨콘" || arg == "디시콘" || arg == "dccon") {
+      loadDcCon();
+      return true;
+    }
+    break;
 
-	default:
-		debugLog("잘못된 명령어입니다.");
-		return false;
-	}
+  case "scale":
+    if (arg == "") {
+      debugLog("현재 배율 : " + (window.localStorage.getItem("scale")||100) + "%");
+      return true;
+    }
+    if (!isNaN(arg)) {
+      window.localStorage.setItem("scale", Number(arg));
+      setScale();
+      return true;
+    }
+    break;
+
+  default:
+    break;
+  }
+  debugLog("잘못된 명령어입니다.");
+  return false;
 }
 
 
