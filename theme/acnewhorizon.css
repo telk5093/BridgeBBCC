@@ -1,12 +1,8 @@
-﻿/*
-@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
-*/
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+﻿@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 @import url(//cdn.rawgit.com/young-ha/webfont-archive/master/css/Godo.css);
+@import url(./common.css);
 
 html { overflow: hidden; }
 body {
@@ -17,30 +13,6 @@ body {
 	bottom: 0;
 }
 
-/* 최대(기본) 크기는 112px */
-img.twitch_emote { max-height: 50px; }
-img.dccon { max-height: 100px; }
-
-
-/* 구독자 및 후원 메세지 설정 */
-/*
-	구독 메세지
-	<div class="chat_msg_box">
-		<div class="chat_cheer_box">(configData.cheersMsg)</div>
-		우리 스트리머 사랑해!!
-		<div calss="chat_cheer_text">
-			<img class="cheer_icon" src="./images/cheer/cheer100.gif>
-			100
-		</div>
-		사실 테스트하려고 후원하는거지만.
-	</div>
-
-	후원 메세지
-	<div class="chat_msg_box">
-		<div class="chat_subscribe_box">(configData.subMonthsMsg)</div>
-		구독인 줄 알았지만 테스트였습니다 Kappa Kappa
-	</div>
-*/
 @keyframes blink {
 	50% {
 		color: #0096ff;
