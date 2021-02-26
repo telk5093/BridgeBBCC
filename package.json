@@ -1,6 +1,6 @@
 {
 	"name": "BridgeBBCC",
-	"version": "0.5.3",
+	"version": "0.5.4",
 	"description": "Bridge Between BroadCasting and twitch Chat",
 	"keywords": [
 		"twitch",
@@ -8,7 +8,11 @@
 		"IRC"
 	],
 	"bugs": {
-		"url": "https://github.com/krynen/BridgeBBCC"
+		"url": "https://github.com/krynen/BridgeBBCC/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/krynen/BridgeBBCC.git"
 	},
 	"license": "MIT",
 	"author": "Mr_WaterT",
