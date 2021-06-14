@@ -788,7 +788,7 @@ defaultColors = [
 	"#5F9EA0", "#1E90FF", "#FF69B4", "#8A2BE2", "#00FF7F"];
 debugLog("트위치에 접속을 시도합니다.");
 manageMessage = function() {}; // 받은 명령어 처리 함수
-var client = (function() {
+var client = function() {
 	ws = new WebSocket(configData.webSocket);
 
 	ws.onopen = function() {
@@ -1010,4 +1010,5 @@ var client = (function() {
 				function() { client(); },
 				configData.retryInterval * 1000 );
 	}
-}) ();
+};
+client();
