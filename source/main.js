@@ -189,8 +189,8 @@ addChatMessage = function(nick, message, data) {
         if (targets.length > 0) {
           var chatBadge = document.createElement("img");
           chatBadge.src = badgeList[targets[0]];
-          chatBadge.classList.add("badge_" + badgeName);
-          chatBadge.classList.add("badge_" + badge);
+        //   chatBadge.classList.add("badge_" + badgeName);
+        //   chatBadge.classList.add("badge_" + badge);
           chatBadgeBox.appendChild(chatBadge);
         }
       } );
